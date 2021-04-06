@@ -1,0 +1,45 @@
+{
+    "paths": [
+        {
+            "name": "/path",
+            "lambdaFunction": "newRestLambda",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/GET"
+                ]
+            },
+            "policyResourceName": "/path"
+        }
+    ],
+    "resourceName": "newRest",
+    "apiName": "newRest",
+    "functionArns": [
+        {
+            "lambdaFunction": "newRestLambda"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 1,
+        "authRoleName": "amplify-amplifye586d8921db14-staging-110514-authRole",
+        "unAuthRoleName": "amplify-amplifye586d8921db14-staging-110514-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "newRestLambda",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
